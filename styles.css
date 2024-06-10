@@ -1,0 +1,158 @@
+@import url("Digital_7/stylesheet.css");
+
+:root {
+  --image-width: 1920px; /* Width of the image */
+  --image-height: 1440px; /* Height of the image */
+  --bg-width: 100%; /* Set the background width as a percentage of the container width */
+  --bg-height: calc(var(--bg-width) / var(--image-width) * var(--image-height));
+}
+
+body {
+  background-color: #000;
+  color: #000000;
+  font-family: "Digital-7";
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.header {
+  background-color: rgba(64, 255, 0, 0.89);
+  padding: 10px 20px;
+  text-align: center;
+  /* Remove position: absolute; */
+  /* Remove top: 1vh; */
+  /* Change width to match container or use percentages */
+  width: calc(100% - 40px); /* Adjust based on padding of parent */
+  border: 2px solid #00ff1a;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.91);
+  margin: 0 auto; /* Center the header */
+}
+
+.header h1 {
+  margin: 0;
+  text-shadow: 3px 3px 5px #000000;
+}
+
+#container {
+  max-width: 1000px;
+  -webkit-backdrop-filter: blur(10px); /* Add -webkit-backdrop-filter for Safari */
+  backdrop-filter: blur(10px);
+  background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.377) 40%, rgb(0, 163, 3) 80%); /* Black background for the terminal */
+  padding: 20px;
+  border: 2px solid #26ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 70px #00ff1eb3;
+}
+
+#container::before {
+    z-index: -1;
+    pointer-events: none;
+    position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  border: 4px solid rgb(0, 255, 8);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+#messages {
+  scroll-behavior: auto;
+  height: 700px; /* Adjust height as needed */
+  overflow-y: auto; /* Show vertical scrollbar when needed */
+  border-bottom: 2px solid #00ff00;
+  padding: 20px;
+  text-shadow: 3px 3px 5px #000000;
+  font-size: larger;
+  position: relative; /* Ensure the parent is positioned */
+}
+
+#messages::before {
+  content: '';
+  background-size: cover; /* Cover the entire area of the ::after element */
+  opacity: 50%; /* Adjust the opacity to your liking */
+  pointer-events: none; /* Ignore mouse events */
+  box-shadow: inset 0 0 100px #6aff00;
+  background-image: url("r2.png"); /* Path to your light-up effect image */
+}
+
+#messages div {
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  border: 2px solid #1eff00;
+  box-shadow: 0 0 50px rgb(72, 255, 59);
+}
+
+input[type="text"],
+input[type="file"],
+button {
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #01ff01;
+  background-color: rgba(0, 0, 0, 0.89);
+  color: #37ff00;
+  box-shadow: 0 0 30px rgba(88, 255, 54, 0.896);
+}
+
+input[type="text"],
+input[type="file"] {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.89);
+}
+
+button {
+  cursor: pointer;
+  width: 100px;
+  right: 5vh;
+  position: relative
+}
+
+button:hover {
+  background-color: #fefefe;
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.86);
+}
+
+#warning {
+    font-size: 12px;
+    position: relative;
+    top: 3.2vh;
+    right: 19vh;
+    color: crimson;
+}
+
+.sent-message {
+  font-size: 26px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optional: Make the font bold */
+  color: #81494900; /* Optional: Change the color of sent messages */
+}
+
+.glowing-text {
+  text-shadow: 0 0 90px #29d60b, 0 0 90px #00ff04, 0 0 90px #00ff1a, 0 0 90px #00ffa2, 0 0 50px #00ffbb, 0 0 60px #3cffaa, 0 0 70px #66ff00;
+}
+
+/* Wide-Angle Screen Distortion Effect */
+.screen-distortion {
+  transform: perspective(800px) rotateX(10deg);
+  transform-origin: bottom center;
+}
+
