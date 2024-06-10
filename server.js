@@ -6,10 +6,22 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server);
 
-// Use CORS middleware for all routes
-app.use(cors());
+// Configure CORS options for Express
+const corsOptions = {
+  origin: 'https://open-chat.neocities.org', // Adjust the origin according to your needs
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+// Initialize socket.io with CORS options
+const io = socketIO(server, {
+  cors: {
+    origin: 'https://open-chat.neocities.org', // Adjust the origin according to your needs
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 
 // Serve static files from a directory (e.g., 'public')
 app.use(express.static(path.join(__dirname, 'public')));
