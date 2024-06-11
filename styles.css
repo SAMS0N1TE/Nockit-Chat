@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  background-color: rgba(64, 255, 0, 0.89);
+  background-color: rgba(0, 0, 0, 0.89);
   padding: 10px 20px;
   text-align: center;
   /* Remove position: absolute; */
