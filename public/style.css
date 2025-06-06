@@ -1,0 +1,29 @@
+body {
+  background: #008080;
+}
+
+ul#messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
+  font-size: 15px;
+}
+
+.self {
+  background: #c0e8ff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  color: #000080;
+}
+
+.btn {
+  font-family: inherit;
+  background: #f3f3f3;
+  border: 1px solid #888;
+  box-shadow: 2px 2px #fff, inset 1px 1px 2px #d0d0d0;
+  cursor: pointer;
+  padding: 2px 10px;
+}
