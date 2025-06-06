@@ -1,20 +1,13 @@
 {
-  "name": "node-extension-component",
+  "name": "aim-w95-chat",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "jquery": "^3.7.1",
-    "sharp": "^0.33.3",
     "socket.io": "^4.7.5"
   }
 }
