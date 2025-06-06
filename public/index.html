@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIM95 Chat</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="window" style="width: 350px; margin: 50px auto;">
+    <div class="title-bar">
+      <div class="title-bar-text">AIM95 - Sign In</div>
+    </div>
+    <div class="window-body" id="login-panel">
+      <form id="login-form">
+        <label for="login-username">Username:</label>
+        <input id="login-username" type="text" maxlength="16" required autofocus>
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+    </div>
+    <div class="window-body" id="chat-panel" style="display:none;">
+      <div class="field-row-stacked" style="height:300px;">
+        <ul id="messages" style="height:260px; overflow-y:auto; border:1px solid #ccc; background:#fff; padding:8px; margin-bottom:8px;"></ul>
+        <form id="message-form" class="field-row" autocomplete="off" style="margin-top: 4px;">
+          <input id="m" type="text" placeholder="Type a message..." style="width:65%;" maxlength="255" autocomplete="off" required />
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.5/dist/socket.io.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
