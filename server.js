@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigin = 'https://open-chat.neocities.org';
+const allowedOrigin = 'https://open-chat.neocities.org'; // Adjust for your deploy
 
 app.use(cors({
   origin: allowedOrigin,
@@ -35,9 +35,7 @@ io.on('connection', (socket) => {
     io.emit('chat message', data);
   });
 
-  socket.on('disconnect', () => {
-    console.log(`User disconnected: ${socket.id}`);
-  });
+  socket.on('disconnect', () => {});
 });
 
 const PORT = process.env.PORT || 8000;
